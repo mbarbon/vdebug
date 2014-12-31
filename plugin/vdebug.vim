@@ -23,6 +23,11 @@ if !has("python")
     finish
 endif
 
+" Do not source this script if there is no configuration defined
+if !exists("g:vdebug_options")
+    finish
+endif
+
 silent doautocmd User VdebugPre
 
 " Load start_vdebug.py either from the runtime directory (usually
